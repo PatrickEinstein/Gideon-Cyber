@@ -14,6 +14,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
   const userAvailable = await User.findOne({ email });
   if (userAvailable) {
+    console.log(userAvailable);
     res.status(400);
     throw new Error("User already registered");
   }
