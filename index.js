@@ -6,6 +6,7 @@ const dotenv = require("dotenv").config();
 const userRoutes = require("./routes/userRoutes");
 // const User =require("./models/userModel")
 const bodyParser = require("body-parser");
+const cors = require("cor")
 
 
 
@@ -15,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(errorHandler);
-
+app.use(cors());
 
 app.use("/users", userRoutes );
 
