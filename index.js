@@ -1,10 +1,6 @@
 const express = require("express");
-const errorHandler = require("./middleware/errorHandler");
 const mongoose = require("mongoose");
-const connectDb = require("./config/dbConnection");
-const dotenv = require("dotenv").config();
 const userRoutes = require("./routes/userRoutes");
-// const User =require("./models/userModel")
 const bodyParser = require("body-parser");
 const cors = require("cors")
 
@@ -15,7 +11,6 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.json())
-app.use(errorHandler);
 app.use(cors());
 
 app.use("/users", userRoutes );
