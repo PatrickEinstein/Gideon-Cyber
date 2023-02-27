@@ -8,13 +8,13 @@ const jwt = require("jsonwebtoken");
 //@access Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(req.body);
   if (!name || !email || !password) {
     res.status(400);
     throw new Error("All fields are required");
   }
   const userAvailable = await User.findOne({ email });
   if (userAvailable) {
-    console.log(userAvailable);
     res.status(400);
     throw new Error("User already registered");
   }
