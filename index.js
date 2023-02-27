@@ -6,7 +6,7 @@ const dotenv = require("dotenv").config();
 const userRoutes = require("./routes/userRoutes");
 // const User =require("./models/userModel")
 const bodyParser = require("body-parser");
-const cors = require("cor")
+const cors = require("cors")
 
 
 
